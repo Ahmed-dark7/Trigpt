@@ -1,0 +1,15 @@
+:root{
+    --primary: #e96c12;
+    --second-color:#174029;
+    --second-color-1:#1E5F35;
+    --gray:#55595C;
+
+    /* Fonts */
+    --font-family: changa;
+    --font-size:24px;
+
+    /* buttons */
+    --btn-w: 336px;
+    --btn-h: 64px;
+    --btn-radius: 24px;
+}
