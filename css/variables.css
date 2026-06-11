@@ -1,12 +1,19 @@
 :root{
     --primary: #e96c12;
+    --primary-2: #FBE2D0;
+    --primary-5: #E96C12;
     --second-color:#174029;
-    --second-color-1:#1E5F35;
+    --second-color-5:#1E5F35;
+    --white-1: #FDF5EE;
     --gray:#55595C;
+    --gray-4: #919395;
+    --gray-5: #55595C;
+    --gray-6: #484C4E;
 
     /* Fonts */
     --font-family: changa;
     --font-size:24px;
+    --font-size-s:20px;
 
     /* buttons */
     --btn-w: 336px;

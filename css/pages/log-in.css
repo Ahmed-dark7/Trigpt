@@ -5,30 +5,60 @@ body{
     align-items: center;
     font-family: var(--font-family);
     position: relative;
+    background: linear-gradient(
+        to bottom,
+        rgb(from var(--primary) r g b / 5%),
+        rgb(from var(--primary) r g b / 20%)
+    );
+    overflow: hidden;
+}
+.circle1,
+.circle2,
+.circle3{
+    width: 544px;
+    height: 544px;
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+}
+.circle1{
+    top: -58px;
+    left: -2px;
+    background-color: #FBE2D0;
+    border: 1px solid #FDF7F1;
+}
+.circle2{
+    left: 0;
+    top: 480px;
+    background-color: #FDF5EE;
+    border: 1px solid rgba(from var(--primary) r g b / 10%);
+}
+.circle3{
+    left: 1021px;
+    top: -64px;
+    background-color: #FEFBF8;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 24px solid #FDF5EE;
 }
 main{
     display: flex;
     flex-wrap: wrap;
     width: 1080px;
-    min-height: 100vh;
-    padding: 48px;
+    min-height: 736px;
+    background-color: #fff;
+    padding: 48px 0;
 }
 main > article{
     width: 50%;
 }
 main article:first-of-type{
-    height: 100%;
-}
-main article:first-of-type img{
-    width: 200px;
-    height: 200px;
-    background-color: red;
+     display: flex;
+     align-items: center;
 }
 main article:first-of-type img{
     width: 100%;
-    height: 360px;
-    max-width: 536px;
-    background-color: red;    
+    height: 536px;
+    max-width: 360px;
 }
 main article:last-of-type{
     display: flex;
@@ -36,6 +66,7 @@ main article:last-of-type{
     text-align: center;
 }
 main article:last-of-type div{
+    height: fit-content;
     width: var(--btn-w);
     display: flex;
     justify-content: center;
@@ -46,17 +77,16 @@ main article:last-of-type div p:nth-of-type(2),
 main article:last-of-type div p:nth-of-type(3){
     font: 700 var(--font-size) var(--font-family);
     width: 100%;
+    height: 40px;
     direction: rtl;
 }
 main article:last-of-type div p:nth-of-type(1){
     color: var(--second-color-1);
     text-transform: capitalize;
-    height: 40px;
     margin-bottom: 24px;
 }
 main article:last-of-type div p:nth-of-type(2){
     color: var(--primary);
-    height: 40px;
     margin-bottom: 48px;
 }
 main article:last-of-type div input,
@@ -70,11 +100,13 @@ main article:last-of-type div input{
     border: 1px solid rgb(from var(--primary) r g b / 16%);
     background-color: #FEFBF8;
     padding-left: 16px;
+    color : var(--gray-6);
 }
 main article:last-of-type div input::placeholder{
     text-transform: capitalize;
     font-weight: 500;
     font-family: var(--font-family);
+    color:var(--gray-4);
 }
 main article:last-of-type div input:focus{
     border-color: var(--primary);
@@ -97,13 +129,8 @@ main article:last-of-type div .social{
     height: 32px;
     margin: 8px 0 48px 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: red;
-}
-main article:last-of-type div .social a{
-    width: 50%;
-    height: 100%;
 }
 main article:last-of-type div p:nth-of-type(3){
     font-weight: normal;
@@ -115,9 +142,59 @@ main article:last-of-type div p:nth-of-type(3) span a{
     font-size: var(--font-size);
     color: var(--primary);
     text-decoration: none;
+    text-transform: capitalize;
+}
+main a:hover{
+    transform: scale(1.05);
+    transform: translateY(-5px);
+    transition: all .5s;
 }
 @media (max-width: 768px) {
+    html{
+        overflow: hidden;
+    }    
+    body{
+        padding: 10px;
+    }
+    .circle1,
+    .circle2,
+    .circle3{
+        width: 0;
+        height: 0;
+    }
+    main{
+        height: 100%;
+        padding: 0;
+    } 
     main > article{
-    width: 100%;
+        width: 100%;
+    }
+    main article:first-of-type{
+        height: 30%;
+    }
+    main article:first-of-type img{
+        max-width:100%;
+        height: 100%;
+    }
+    main article:last-of-type{
+        height: 70%;
+    }
+    main article:last-of-type div p:nth-of-type(1),
+    main article:last-of-type div p:nth-of-type(2),
+    main article:last-of-type div input,
+    main article:last-of-type div .plan{
+        margin-bottom: 20px;
+    }
+    main article:last-of-type div .social{
+        margin-bottom: 10px;
+    }
 }
+@media (max-width: 480px){
+    main article:first-of-type{
+        height: 45%;
+    }
+    main article:last-of-type{
+        height: 55%;
+        margin-top: 10px;
+    }
 }
